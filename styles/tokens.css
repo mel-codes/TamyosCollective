@@ -1,0 +1,119 @@
+/* styles/tokens.css */
+:root {
+
+  /* =====================
+     COLORS
+  ===================== */
+  /* Brand */
+  --color-primary: #c8a96e;       /* warm gold — buttons, accents */
+  --color-primary-dark: #a8864a;  /* hover states */
+  --color-primary-light: #e8d5b0; /* subtle highlights */
+
+  /* Backgrounds */
+  --color-bg: #faf8f4;            /* page background */
+  --color-surface: #ffffff;       /* cards, modals */
+  --color-surface-alt: #f0ebe3;   /* alternate sections */
+
+  /* Text */
+  --color-text: #1a1a1a;          /* body text */
+  --color-text-muted: #6b6b6b;    /* secondary text, metadata */
+  --color-text-light: #ffffff;    /* text on dark backgrounds */
+
+  /* Borders & Dividers */
+  --color-border: #e5e0d8;
+  --color-border-dark: #c9c0b4;
+
+  /* Feedback */
+  --color-success: #4a7c59;
+  --color-error: #c0392b;
+  --color-warning: #e67e22;
+
+
+  /* =====================
+     TYPOGRAPHY
+  ===================== */
+  --font-heading: 'Playfair Display', serif;  /* elegant, vintage feel */
+  --font-body: 'Inter', sans-serif;           /* clean, readable */
+
+  --text-xs:   0.75rem;    /* 12px — labels, badges */
+  --text-sm:   0.875rem;   /* 14px — captions, meta */
+  --text-base: 1rem;       /* 16px — body copy */
+  --text-lg:   1.125rem;   /* 18px — lead text */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px — card titles */
+  --text-3xl:  1.875rem;   /* 30px — section headings */
+  --text-4xl:  2.25rem;    /* 36px — hero headings */
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  --leading-tight:  1.25;
+  --leading-normal: 1.5;
+  --leading-loose:  1.75;
+
+
+  /* =====================
+     SPACING
+  ===================== */
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-24: 6rem;      /* 96px */
+
+
+  /* =====================
+     LAYOUT
+  ===================== */
+  --max-width: 1280px;       /* max page width */
+  --max-width-sm: 640px;     /* narrow content (forms, blog) */
+
+  --container-padding: var(--space-4);   /* mobile */
+
+
+  /* =====================
+     BORDERS & RADIUS
+  ===================== */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;   /* pills, circular avatars */
+
+  --border-thin:   1px solid var(--color-border);
+  --border-medium: 2px solid var(--color-border);
+
+
+  /* =====================
+     SHADOWS
+  ===================== */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+
+
+  /* =====================
+     TRANSITIONS
+  ===================== */
+  --transition-fast:   150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow:   400ms ease;
+
+
+  /* =====================
+     Z-INDEX
+  ===================== */
+  --z-base:    0;
+  --z-above:   10;
+  --z-dropdown: 100;
+  --z-sticky:  200;
+  --z-modal:   300;
+  --z-toast:   400;
+
+}
