@@ -1,2 +1,2 @@
-# TamyosVintage
+# TamyosCollective
 Vintage Apparel Website
