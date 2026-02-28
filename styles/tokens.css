@@ -13,6 +13,7 @@
   --color-bg: rgba(34, 30, 31);
   --color-bg-2: rgb(54, 48, 50);            /* page background */
   --color-btn: rgb(127, 126, 127);
+  --color-bg-delivery: rgb(208, 206, 204);
 
   /* Text */
   --color-text: #1a1a1a;          /* body text */
@@ -90,6 +91,7 @@
   /* =====================
      SHADOWS
   ===================== */
+  --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.6);
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
   --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);

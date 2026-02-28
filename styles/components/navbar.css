@@ -23,12 +23,13 @@
 
 .navbar-title {
     font-family: var(--font-heading);
-    font-size: var(--text-xl);
-    font-weight: var(--font-bold);
-    color: var(--color-text);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-light);
     z-index: var(--z-modal);
     transition: color var(--transition-fast);
-    display: none;
+    opacity: 0;
+    letter-spacing: var(--space-1);
 }
 
 /* HAMBURGER */
@@ -119,8 +120,16 @@
 /* DESKTOP (1024px+) */
 
 @media (min-width: 1024px) {
+    .navbar nav {
+        justify-content: space-between;
+    }
+
     .navbar-hamburger {
         display: none;
+    }
+
+    .navbar-title {
+        opacity: 1;
     }
 
     .navbar-links {

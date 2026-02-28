@@ -68,13 +68,15 @@
 /* ABOUT US */
 
 .about-us {
-    min-height: 100vh;
+    min-height: 65vh;
     z-index: 0;
 
     display: flex;
     flex-direction: column;
     row-gap: var(--space-6);
     padding: var(--space-8);
+    justify-content: center;
+    align-items: center;
 
     font-family: var(--font-body);
 }
@@ -92,5 +94,142 @@
 .about-us p {
     font-family: var(--font-body);
     line-height: var(--space-6);
+    color: var(--color-text-muted);
+}
+
+.about-video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-8);
+    display: block;
+    margin-inline: auto;
+}
+
+/* DELIVERY PROCESS */
+
+.delivery-process {
+    min-height: 105vh;
+    z-index: 0;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-12);
+    padding: var(--space-8);
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-body);
+}
+
+.delivery-heading {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-6);
+    justify-content: center;
+    align-items: center;
+}
+
+.delivery-heading h2 {
+    font-size: var(--text-sm);
+}
+
+.delivery-heading h1 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-bold);
+    font-size: var(--text-3xl);
+}
+
+/* delivery options */
+.delivery-options {
+    width: 100%;
+    max-width: 768px;
+    padding: var(--space-6);
+    background-color: var(--color-bg-delivery);
+    border-radius: var(--radius-lg);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-4);
+
+    box-shadow: var(--shadow-soft);
+}
+
+.delivery-options i {
+    font-size: var(--text-4xl);
+}
+
+.delivery-options h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+}
+
+.delivery-options p {
+    color: var(--color-text-muted);
+}
+
+/* REFUND POLICY */
+
+.refund-policy {
+    min-height: 105vh;
+    z-index: 0;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-12);
+    padding: var(--space-8);
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-body);
+}
+
+.refund-heading {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-6);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+    .refund-heading {
+        text-align: none;
+    }
+}
+
+.refund-heading h2 {
+    font-size: var(--text-sm);
+}
+
+.refund-heading h1 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-bold);
+    font-size: var(--text-3xl);
+}
+
+.refund-heading p {
+    color: var(--color-text-muted);
+}
+
+.refund-policies {
+    width: 100%;
+    max-width: 768px;
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-4);
+}
+
+.refund-policies h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+}
+
+.refund-policies p {
     color: var(--color-text-muted);
 }
