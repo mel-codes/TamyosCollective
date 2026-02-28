@@ -5,14 +5,14 @@
      COLORS
   ===================== */
   /* Brand */
-  --color-primary: #c8a96e;       /* warm gold — buttons, accents */
-  --color-primary-dark: #a8864a;  /* hover states */
+  --color-primary: #ffffff;       /* warm gold — buttons, accents */
+  --color-primary-dark: #000000;  /* hover states */
   --color-primary-light: #e8d5b0; /* subtle highlights */
 
   /* Backgrounds */
-  --color-bg: #faf8f4;            /* page background */
-  --color-surface: #ffffff;       /* cards, modals */
-  --color-surface-alt: #f0ebe3;   /* alternate sections */
+  --color-bg: rgba(34, 30, 31);
+  --color-bg-2: rgb(54, 48, 50);            /* page background */
+  --color-btn: rgb(127, 126, 127);
 
   /* Text */
   --color-text: #1a1a1a;          /* body text */
@@ -32,7 +32,7 @@
   /* =====================
      TYPOGRAPHY
   ===================== */
-  --font-heading: 'Playfair Display', serif;  /* elegant, vintage feel */
+  --font-heading: "Outfit", sans-serif;  /* elegant, vintage feel */
   --font-body: 'Inter', sans-serif;           /* clean, readable */
 
   --text-xs:   0.75rem;    /* 12px — labels, badges */
@@ -73,9 +73,6 @@
   ===================== */
   --max-width: 1280px;       /* max page width */
   --max-width-sm: 640px;     /* narrow content (forms, blog) */
-
-  --container-padding: var(--space-4);   /* mobile */
-
 
   /* =====================
      BORDERS & RADIUS
