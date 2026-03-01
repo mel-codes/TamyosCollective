@@ -13,7 +13,8 @@
   --color-bg: rgba(34, 30, 31);
   --color-bg-2: rgb(54, 48, 50);            /* page background */
   --color-btn: rgb(127, 126, 127);
-  --color-bg-delivery: rgb(208, 206, 204);
+  --color-bg-delivery: rgb(232, 232, 232);
+  --color-bg-dark: rgb(0,0,0);
 
   /* Text */
   --color-text: #1a1a1a;          /* body text */

@@ -7,8 +7,8 @@
     width: 100%;
     z-index: var(--z-sticky);
     background: transparent;
-    transition: background var(--transiiton-normal),
-                backdrop-filter var(--transiiton-normal);
+    transition: background var(--transition-normal),
+                backdrop-filter var(--transition-normal);
 }
 
 .navbar nav {
@@ -82,6 +82,9 @@
     /* fullscreen overlay */
     position: fixed;
     inset: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: var(--z-dropdown);
     background: rgba(0, 0, 0, 0.92);
     backdrop-filter: blur(8px);
 
@@ -142,6 +145,8 @@
         transform: none;
         gap: var(--space-8);
         inset: auto;
+        height: auto;
+        width: auto;
     }
 
     .navbar-links a {
