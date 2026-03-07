@@ -277,42 +277,91 @@
     border-radius: var(--radius-lg);
 }
 
-/* CONTACT */
+/* BACK TO TOP */
 
-.contact {
-    min-height: 100vh;
-    z-index: 0;
+.back-to-top {
+    position: fixed;
+    bottom: var(--space-8);
+    right: var(--space-8);
+    z-index: var(--z-above);
 
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--space-12);
-    padding: var(--space-8);
-    justify-content: center;
-    align-items: first baseline;
-
-    font-family: var(--font-body);
+    background-color: var(--color-btn);
     color: var(--color-text-light);
+    border: none;
+    border-radius: var(--radius-full);
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* hidden by default */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity var(--transition-normal),
+                transform var(--transition-normal);
+}
+
+/* visible state */
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    opacity: 0.8;
+}
+
+/* FOOTER */
+
+.footer {
     background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    font-family: var(--font-body);
+    padding: var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.contact-heading {
+.footer-inner {
+    max-width: 1100px;
+    margin-inline: auto;
     display: flex;
-    flex-direction: column;
-    row-gap: var(--space-6);
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--space-8);
 }
 
-.contact-heading h1 {
-    font-family: var(--font-heading);
-    font-weight: var(--font-bold);
-    font-size: var(--text-3xl);
+.footer-logo {
+    width: 140px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
 }
 
-.contact-heading p {
+.footer-social {
+    display: flex;
+    gap: var(--space-6);
+}
+
+.footer-social a {
+    color: var(--color-text-light);
+    font-size: var(--text-xl);
+    transition: opacity var(--transition-fast);
+}
+
+.footer-social a:hover {
+    opacity: 0.6;
+}
+
+.footer-copy {
+    max-width: 1100px;
+    margin-inline: auto;
+    font-size: var(--text-sm);
     color: var(--color-text-muted);
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--space-4);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--space-4);
+    text-align: center;
 }

@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="styles/global.css" />
   <link rel="stylesheet" href="styles/components/navbar.css">
   <link rel="stylesheet" href="styles/components/button.css">
+  <link rel="stylesheet" href="styles/components/contact.css">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,33 +141,62 @@
 
     <!-- contact form -->
     <section class="contact">
-      <div class="contact-heading">
-        <h1>GET IN TOUCH</h1>
-        <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-        <div class="contact-info">
-          <p><i class="fa-regular fa-circle-envelope"></i> contact@tamyoscollective.com</p>
-          <p><i class="fa-regular fa-phone"></i> +1 (555) 123-4567</p>
-          <p><i class="fa-regular fa-location-dot"></i> Vancouver, BC</p>
+      <div class="contact-inner">
+        <div class="contact-left">
+          <div class="contact-heading">
+            <h1>GET IN TOUCH</h1>
+            <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+          </div>
+          <div class="contact-info">
+            <p><i class="fa-regular fa-circle-envelope"></i> contact@tamyoscollective.com</p>
+            <p><i class="fa-regular fa-phone"></i> +1 (555) 123-4567</p>
+            <p><i class="fa-regular fa-location-dot"></i> Vancouver, BC</p>
+          </div>
+        </div>
+        <div>
+          <form class="contact--form" id="contact-form">
+            <div class="form-group">
+              <input type="text" id="contact-name" name="name" placeholder="Your Name" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="contact-email" name="email" placeholder="Your Email" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" id="contact-message" placeholder="What's on your mind?" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn" id="form-submit">
+              Submit
+            </button>
+            <p class="form--feedback" id="form--feedback" aria-live="polite"></p>
+          </form>
         </div>
       </div>
-      <form class="contact--form" id="contact-form">
-        <div class="form-group">
-          <input type="text" id="contact-name" name="name" placeholder="Your Name" autocomplete="name" required>
-        </div>
-        <div class="form-group">
-          <input type="text" id="contact-email" name="email" placeholder="Your Email" autocomplete="email" required>
-        </div>
-        <div class="form-group">
-          <textarea name="message" id="contact-message" placeholder="What's on your mind?" rows="5" required></textarea>
-        </div>
-      </form>
     </section>
+
+    <!-- Back to top -->
+   
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
   </main>
 
   <!-- Footer -->
 
   <footer class="footer">
-
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/img1.png" alt="Tamyos Collective" class="footer-logo" />
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/tamyoscollective" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://depop.com/tamyos" target="_blank" rel="noopener" aria-label="Depop">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Tamyos Collective. All rights reserved.</p>
   </footer>
 
   <!-- Scripts -->

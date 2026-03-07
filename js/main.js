@@ -42,8 +42,24 @@ document.addEventListener('keydown', (e) => {
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', false);
         document.body.style.overflow = '';
-        
+
         // sends focus back to hamburger button
         hamburger.focus()
     }
+})
+
+
+// BACK TO TOP
+
+const backToTop = document.getElementById('back-to-top')
+
+window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 400)
+})
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'   // smooth scroll back to top
+    })
 })
