@@ -94,13 +94,35 @@
 
 .contact--form .btn {
     font-family: var(--font-body);
-    background-color: var(--color-btn);
+    background-color: var(--color-btn2);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
     padding: var(--space-3) var(--space-4);
     border: none;
     cursor: pointer;
     border-radius: var(--radius-md);
+
     display: block;
     margin-inline: auto;
+
+    transition: background var(--transition-fast),
+                transform var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+.contact--form .btn:hover {
+    background-color: rgb(232, 227, 222);           /* slightly darker on hover */
+    transform: translateY(-2px);          /* lifts up */
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
+}
+
+.contact--form .btn:active {
+    transform: scale(0.97);               /* press down effect */
+    box-shadow: none;
 }
 
 .form--feedback {
