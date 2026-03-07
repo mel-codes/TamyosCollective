@@ -164,6 +164,7 @@
             <div class="form-group">
               <textarea name="message" id="contact-message" placeholder="What's on your mind?" rows="5" required></textarea>
             </div>
+            <input type="text" name="honeypot" id="honeypot" style="display:none" autocomplete="off" />
             <button type="submit" class="btn" id="form-submit">
               Submit
             </button>
@@ -202,6 +203,8 @@
   <!-- Scripts -->
    
   <script src="js/main.js" defer></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/contact.js" defer></script>
 
 </body>
 </html>

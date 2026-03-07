@@ -68,7 +68,7 @@
 .form-group textarea {
     font-family: var(--font-body);
     font-size: var(--text-base);
-    color: var(--color-text);
+    color: var(--color-text-light);
     background: var(--color-surface);
     border: var(--border-thin);
     border-radius: var(--radius-md);
