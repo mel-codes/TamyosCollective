@@ -1,4 +1,4 @@
-//js/main.js
+// js/main.js
 
 const navbar = document.querySelector('.navbar');
 const hamburger = document.getElementById('hamburger');

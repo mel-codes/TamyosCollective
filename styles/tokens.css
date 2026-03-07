@@ -1,4 +1,5 @@
 /* styles/tokens.css */
+
 :root {
 
   /* =====================
@@ -13,6 +14,7 @@
   --color-bg: rgba(34, 30, 31);
   --color-bg-2: rgb(54, 48, 50);            /* page background */
   --color-btn: rgb(127, 126, 127);
+  --color-btn2: rgb(242, 237, 232);
   --color-bg-delivery: rgb(232, 232, 232);
   --color-bg-dark: rgb(0,0,0);
 

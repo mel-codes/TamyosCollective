@@ -1,3 +1,5 @@
+/* styles/components/navbar.css */
+
 /* BASE (mobile first) */
 
 .navbar {
@@ -103,6 +105,54 @@
                 transform var(--transition-normal);
 }
 
+.navbar-links li {
+    padding: var(--space-4) var(--space-8);
+    background-color: var(--color-btn2);
+    border: none;
+    border-radius: var(--radius-full);
+    transition: transform var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+.navbar-links li:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-soft);
+}
+
+.navbar-links li:active {
+    transform: scale(0.95);
+}
+
+.navbar-links a {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    position: relative;
+    transition: opacity var(--transition-fast);
+}
+
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-text);
+    transition: width var(--transition-normal);
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+.navbar-links a:hover {
+    opacity: 0.8;
+}
+
 /* OPEN STATE (toggled by JS) */
 
 .navbar-links.open {
@@ -148,8 +198,7 @@
         width: auto;
     }
 
-    .navbar-links a {
-        font-family: var(--font-body);
-        font-size: var(--text-base);
+    .navbar-links li {
+        padding: var(--space-3) var(--space-4);
     }
 }
