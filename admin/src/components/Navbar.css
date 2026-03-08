@@ -1,6 +1,8 @@
-/* styles/components/navbar.css */
+/* src/components/Navbar.css */
 
-/* BASE (mobile first) */
+/* =====================
+   BASE (mobile first)
+===================== */
 
 .navbar {
     position: fixed;
@@ -17,11 +19,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-block: var(--space-4);
-    padding: var(--space-4) var(--space-4);
+    padding: var(--space-4);
 }
 
-/* NAVBAR TITLE */
+/* =====================
+   NAVBAR TITLE
+===================== */
 
 .navbar-title {
     font-family: var(--font-heading);
@@ -30,10 +33,11 @@
     color: var(--color-text-light);
     z-index: var(--z-modal);
     transition: color var(--transition-fast);
-    opacity: 1;
 }
 
-/* HAMBURGER */
+/* =====================
+   HAMBURGER
+===================== */
 
 .navbar-hamburger {
     display: flex;
@@ -54,15 +58,9 @@
     border-radius: var(--radius-full);
     transition: transform var(--transition-normal),
                 opacity var(--transition-normal);
-    
 }
 
-/* HAMBURGER ANIMATION */
-
-.navbar-hamburger.open span {
-    background: var(--color-text-light);
-}
-
+/* hamburger → X animation */
 .navbar-hamburger.open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
@@ -75,12 +73,12 @@
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* NAV LINKS (mobile) */
+/* =====================
+   NAV LINKS (mobile)
+===================== */
 
 .navbar-links {
     list-style: none;
-
-    /* fullscreen overlay */
     position: fixed;
     inset: 0;
     height: 100vh;
@@ -94,7 +92,6 @@
     align-items: center;
     justify-content: center;
     gap: var(--space-8);
-
     color: var(--color-text-light);
 
     /* hidden by default */
@@ -107,8 +104,7 @@
 
 .navbar-links li {
     padding: var(--space-4) var(--space-8);
-    background-color: var(--color-btn2);
-    border: none;
+    background-color: var(--color-btn-light);
     border-radius: var(--radius-full);
     transition: transform var(--transition-fast),
                 box-shadow var(--transition-fast);
@@ -153,15 +149,16 @@
     opacity: 0.8;
 }
 
-/* OPEN STATE (toggled by JS) */
-
+/* open state */
 .navbar-links.open {
     opacity: 1;
     pointer-events: all;
     transform: translateY(0);
 }
 
-/* SCROLLED STATE */
+/* =====================
+   SCROLLED STATE
+===================== */
 
 .navbar.scrolled {
     background: rgba(34, 30, 31, 0.85);
@@ -169,41 +166,9 @@
     box-shadow: var(--shadow-sm);
 }
 
-/* DESKTOP (1024px+) */
-
-@media (min-width: 1024px) {
-    .navbar nav {
-        justify-content: space-between;
-    }
-
-    .navbar-hamburger {
-        display: none;
-    }
-
-    .navbar-title {
-        opacity: 1;
-    }
-
-    .navbar-links {
-        position: static;
-        flex-direction: row;
-        background: none;
-        backdrop-filter: none;
-        opacity: 1;
-        pointer-events: all;
-        transform: none;
-        gap: var(--space-8);
-        inset: auto;
-        height: auto;
-        width: auto;
-    }
-
-    .navbar-links li {
-        padding: var(--space-3) var(--space-4);
-    }
-}
-
-/* ADMIN ONLY */
+/* =====================
+   ADMIN STYLES
+===================== */
 
 .navbar-signout {
     font-family: var(--font-body);
@@ -246,4 +211,32 @@
 
 .navbar-user:hover {
     opacity: 0.7;
+}
+
+/* =====================
+   DESKTOP 1024px+
+===================== */
+
+@media (min-width: 1024px) {
+    .navbar-hamburger {
+        display: none;
+    }
+
+    .navbar-links {
+        position: static;
+        flex-direction: row;
+        background: none;
+        backdrop-filter: none;
+        opacity: 1;
+        pointer-events: all;
+        transform: none;
+        gap: var(--space-8);
+        inset: auto;
+        height: auto;
+        width: auto;
+    }
+
+    .navbar-links li {
+        padding: var(--space-3) var(--space-4);
+    }
 }

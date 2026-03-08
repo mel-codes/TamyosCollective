@@ -1,19 +1,21 @@
 // js/auth.js
 
-// check if admin param is in URL
+// Auth state is passed via URL param from React admin (?admin=true)
+// then stored in sessionStorage for the session duration
+
 const urlParams = new URLSearchParams(window.location.search)
 const adminParam = urlParams.get('admin')
 
-// if admin param exists, store it in sessionStorage
 if (adminParam === 'true') {
     sessionStorage.setItem('isAdmin', 'true')
-    // clean up URL
     window.history.replaceState({}, '', window.location.pathname)
 }
 
 const isAdmin = sessionStorage.getItem('isAdmin') === 'true'
 const navLinks = document.getElementById('nav-links')
 const userIcon = document.querySelector('.navbar-user-li')
+
+if (!userIcon) return   // exit if navbar-user-li doesn't exist
 
 if (isAdmin) {
     const dashboardLi = document.createElement('li')

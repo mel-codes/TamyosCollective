@@ -9,19 +9,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 
 function Navbar() {
-    const [isAdmin, setIsAdmin] = useState(false)
+    const [isAdmin, setIsAdmin]   = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
     const navigate = useNavigate()
 
-    // replaces your scroll event listener
-    const [scrolled, setScrolled] = useState(false)
+    // scroll listener
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50)
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    // checks firebase auth state
+    // firebase auth state
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setIsAdmin(!!user)
@@ -29,7 +29,7 @@ function Navbar() {
         return () => unsubscribe()
     }, [])
 
-    // replaces your escape key listener
+    // escape key listener
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === 'Escape' && menuOpen) {
@@ -55,24 +55,26 @@ function Navbar() {
     const handleSignOut = async () => {
         try {
             await signOut(auth)
-            localStorage.removeItem('isAdmin')
+            sessionStorage.removeItem('isAdmin')
+            handleMenuClose()
             navigate('/')
         } catch (err) {
             console.error(err)
         }
     }
+
     return (
         <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <nav className="container" aria-label="Main navigation">
 
-                <a href={`http://localhost:5500/index.html${isAdmin ? '?admin=true' : ''}`} className="navbar-title">
+                <a href={`http://localhost:5500/index.html${isAdmin ? '?admin=true' : ''}`}
+                className="navbar-title">
                     Tamyos Collective
                 </a>
 
                 {/* hamburger */}
                 <button
                     className={`navbar-hamburger ${menuOpen ? 'open' : ''}`}
-                    id="hamburger"
                     onClick={handleHamburgerClick}
                     aria-label={menuOpen ? 'Close menu' : 'Open menu'}
                     aria-expanded={menuOpen}
@@ -83,12 +85,9 @@ function Navbar() {
                 </button>
 
                 {/* nav links */}
-                <ul
-                    className={`navbar-links ${menuOpen ? 'open' : ''}`}
-                    id="nav-links"
-                >
-                    <li><a href="/products.html" onClick={handleMenuClose}>Products</a></li>
-                    <li><a href="/about.html" onClick={handleMenuClose}>About</a></li>
+                <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
+                    <li><a href="http://localhost:5500/products.html" onClick={handleMenuClose}>Products</a></li>
+                    <li><a href="http://localhost:5500/about.html" onClick={handleMenuClose}>About</a></li>
                     <li>
                         <a href="https://depop.com/tamyos" target="_blank" rel="noopener" onClick={handleMenuClose}>
                             Depop ↗
@@ -98,9 +97,7 @@ function Navbar() {
                     {/* dashboard — admin only */}
                     {isAdmin && (
                         <li>
-                            <Link to="/dashboard" onClick={handleMenuClose}>
-                                Dashboard
-                            </Link>
+                            <Link to="/dashboard" onClick={handleMenuClose}>Dashboard</Link>
                         </li>
                     )}
 
@@ -116,7 +113,6 @@ function Navbar() {
                             </Link>
                         )}
                     </li>
-
                 </ul>
 
             </nav>

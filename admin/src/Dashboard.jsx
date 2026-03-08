@@ -1,8 +1,12 @@
 // src/Dashboard.jsx
-import { useState } from 'react'
+
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { db, storage } from './firebase'
 import { collection, addDoc } from 'firebase/firestore'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from './firebase'
 import './Dashboard.css'
 
 function Dashboard() {
@@ -10,25 +14,41 @@ function Dashboard() {
     const [size, setSize]           = useState('')
     const [description, setDesc]    = useState('')
     const [depopLink, setDepopLink] = useState('')
+    const [price, setPrice]         = useState('')
     const [image, setImage]         = useState(null)
     const [preview, setPreview]     = useState(null)
     const [loading, setLoading]     = useState(false)
     const [success, setSuccess]     = useState('')
     const [error, setError]         = useState('')
+    const navigate = useNavigate()
+
+    // redirect to login if not authenticated
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (!user) navigate('/')
+        })
+        return () => unsubscribe()
+    }, [])
 
     const handleImageChange = (e) => {
         const file = e.target.files[0]
         if (file) {
             setImage(file)
-            setPreview(URL.createObjectURL(file))  // shows a preview before uploading
+            setPreview(URL.createObjectURL(file))
         }
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setLoading(true)
         setError('')
         setSuccess('')
+
+        if (!image) {
+            setError('Please select an image.')
+            return
+        }
+
+        setLoading(true)
 
         try {
             // 1. upload image to Firebase Storage
@@ -40,6 +60,7 @@ function Dashboard() {
             await addDoc(collection(db, 'products'), {
                 name,
                 size,
+                price,
                 description,
                 depopLink,
                 imageUrl,
@@ -51,6 +72,7 @@ function Dashboard() {
             // reset form
             setName('')
             setSize('')
+            setPrice('')
             setDesc('')
             setDepopLink('')
             setImage(null)
@@ -119,6 +141,19 @@ function Dashboard() {
                             placeholder="e.g. M, L, 32x30"
                             value={size}
                             onChange={(e) => setSize(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    {/* PRICE */}
+                    <div className="form-group">
+                        <label htmlFor="product-price">Price</label>
+                        <input
+                            type="text"
+                            id="product-price"
+                            placeholder="e.g. $45"
+                            value={price}
+                            onChange={(e) => setPrice(e.target.value)}
                             required
                         />
                     </div>

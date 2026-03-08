@@ -1,3 +1,5 @@
+// Login.jsx
+
 import './Login.css'
 import { useState } from 'react'
 import { signInWithEmailAndPassword } from 'firebase/auth'
@@ -9,7 +11,7 @@ function Login() {
     const [password, setPassword] = useState('')
     const [error, setError]       = useState('')
     const [loading, setLoading]   = useState(false)
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -20,8 +22,7 @@ function Login() {
 
         try {
             await signInWithEmailAndPassword(auth, email, password)
-            localStorage.setItem('isAdmin', 'true')
-            console.log('logged in!')
+            sessionStorage.setItem('isAdmin', 'true')
             navigate('/dashboard')
         } catch (err) {
             setError('Invalid username or password.')
@@ -40,12 +41,10 @@ function Login() {
             </video>
 
             <div className="login-card">
-
                 <h1 className="login-title">Tamyos Admin</h1>
                 <p className="login-subtitle">Sign in to your dashboard</p>
 
                 <form onSubmit={handleSubmit}>
-
                     <div className="form-group">
                         <label htmlFor="username">Username</label>
                         <input
@@ -75,7 +74,6 @@ function Login() {
                     <button type="submit" className="login-btn" disabled={loading}>
                         {loading ? 'Signing in...' : 'Sign In'}
                     </button>
-
                 </form>
             </div>
         </div>

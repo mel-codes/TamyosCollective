@@ -1,70 +1,66 @@
 // js/main.js
 
-const navbar = document.querySelector('.navbar');
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+const navbar = document.querySelector('.navbar')
+const hamburger = document.getElementById('hamburger')
+const navLinks = document.getElementById('nav-links')
+const backToTop = document.getElementById('back-to-top')
+const isProductsPage = document.body.classList.contains('products-page')
 
-// SCROLL - adds .scrolled class after 50px
+// =====================
+// SCROLL
+// =====================
+
 window.addEventListener('scroll', () => {
-    const isProductsPage = document.body.classList.contains('products-page')
-
+    // navbar — always visible on products page
     if (isProductsPage) {
-        navbar.classList.add('scrolled')  // always keep scrolled on products page
+        navbar.classList.add('scrolled')
     } else {
         navbar.classList.toggle('scrolled', window.scrollY > 50)
     }
+
+    // back to top button
+    if (backToTop) {
+        backToTop.classList.toggle('visible', window.scrollY > 400)
+    }
 })
 
+// =====================
 // HAMBURGER TOGGLE
+// =====================
 
 hamburger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-
-    // tells screen readers if menu is open or closed
-    hamburger.setAttribute('aria-expanded', isOpen);
-
-    // prevents the page from scrolling behind the open menu
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    const isOpen = navLinks.classList.toggle('open')
+    hamburger.classList.toggle('open', isOpen)
+    hamburger.setAttribute('aria-expanded', isOpen)
+    document.body.style.overflow = isOpen ? 'hidden' : ''
 })
 
+// =====================
 // CLOSE MENU ON LINK CLICK
+// =====================
 
 navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', false);
-        document.body.style.overflow = '';
+        navLinks.classList.remove('open')
+        hamburger.classList.remove('open')
+        hamburger.setAttribute('aria-expanded', false)
+        document.body.style.overflow = ''
     })
 })
 
+// =====================
 // CLOSE MENU ON ESCAPE KEY
+// =====================
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navLinks.classList.contains('open')) {
         navLinks.classList.remove('open')
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', false);
-        document.body.style.overflow = '';
-
-        // sends focus back to hamburger button
+        hamburger.classList.remove('open')
+        hamburger.setAttribute('aria-expanded', false)
+        document.body.style.overflow = ''
         hamburger.focus()
     }
 })
 
-
-// BACK TO TOP
-
-const backToTop = document.getElementById('back-to-top')
-
-window.addEventListener('scroll', () => {
-    backToTop.classList.toggle('visible', window.scrollY > 400)
-})
-
-backToTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'   // smooth scroll back to top
-    })
-})
+// =====================
+// BACK TO

@@ -1,15 +1,14 @@
 /* styles/components/contact.css */
 
-/* CONTACT */
+/* =====================
+   CONTACT SECTION
+===================== */
 
 .contact {
     min-height: 80vh;
-    z-index: 0;
     padding: var(--space-8);
-    font-family: var(--font-body);
     color: var(--color-text-light);
     background-color: var(--color-bg-dark);
-
     display: flex;
     align-items: center;
 }
@@ -18,11 +17,14 @@
     width: 100%;
     max-width: 1100px;
     margin-inline: auto;
-
     display: flex;
     flex-direction: column;
     gap: var(--space-12);
 }
+
+/* =====================
+   LEFT COLUMN
+===================== */
 
 .contact-left {
     display: flex;
@@ -37,9 +39,8 @@
 }
 
 .contact-heading h1 {
-    font-family: var(--font-heading);
-    font-weight: var(--font-bold);
     font-size: var(--text-3xl);
+    color: var(--color-text-light);
 }
 
 .contact-heading p {
@@ -52,10 +53,13 @@
     row-gap: var(--space-4);
 }
 
+/* =====================
+   FORM
+===================== */
+
 .contact--form {
     display: flex;
     flex-direction: column;
-    
     gap: var(--space-4);
     width: 100%;
 }
@@ -66,12 +70,12 @@
     gap: var(--space-1);
 }
 
-.form-group input, 
+.form-group input,
 .form-group textarea {
     font-family: var(--font-body);
     font-size: var(--text-base);
     color: var(--color-text-light);
-    background: var(--color-surface);
+    background: var(--color-bg-2);
     border: var(--border-thin);
     border-radius: var(--radius-md);
     padding: var(--space-3) var(--space-4);
@@ -84,7 +88,7 @@
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(200, 169, 110, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
 .form-group textarea {
@@ -92,44 +96,43 @@
     min-height: 120px;
 }
 
+/* =====================
+   SUBMIT BUTTON
+===================== */
+
 .contact--form .btn {
     font-family: var(--font-body);
-    background-color: var(--color-btn2);
+    background-color: var(--color-btn-light);
     color: var(--color-text);
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-
     padding: var(--space-3) var(--space-4);
     border: none;
     cursor: pointer;
     border-radius: var(--radius-md);
-
     display: block;
     margin-inline: auto;
-
     transition: background var(--transition-fast),
                 transform var(--transition-fast),
                 box-shadow var(--transition-fast);
 }
 
 .contact--form .btn:hover {
-    background-color: rgb(232, 227, 222);           /* slightly darker on hover */
-    transform: translateY(-2px);          /* lifts up */
+    background-color: var(--color-btn-light-hover);
+    transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
 }
 
 .contact--form .btn:active {
-    transform: scale(0.97);               /* press down effect */
+    transform: scale(0.97);
     box-shadow: none;
 }
 
-.form--feedback {
-    font-size: var(--text-base);
-    text-align: center;
-    min-height: 20px;
-}
+/* =====================
+   FEEDBACK
+===================== */
 
 .form--feedback {
     font-size: var(--text-base);
@@ -145,7 +148,9 @@
     color: var(--color-error);
 }
 
-/* desktop */
+/* =====================
+   DESKTOP 1024px+
+===================== */
 
 @media (min-width: 1024px) {
     .contact-inner {

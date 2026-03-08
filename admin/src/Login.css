@@ -1,18 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* src/Login.css */
 
-body {
-    font-family: var(--font-body);
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-light);
-}
-
-
-/* LOGIN PAGE */
-
+/* =====================
+   LOGIN PAGE
+===================== */
 
 .login-page {
     min-height: 100vh;
@@ -35,11 +25,15 @@ body {
     filter: brightness(0.4);
 }
 
+/* =====================
+   LOGIN CARD
+===================== */
+
 .login-card {
     position: relative;
     z-index: 1;
-    background: rgba(54, 48, 50, 0.85);
-    backdrop-filter: blur(12px); 
+    background: var(--color-bg-2-transparent);
+    backdrop-filter: blur(12px);
     border-radius: var(--radius-lg);
     padding: var(--space-8);
     width: 100%;
@@ -47,10 +41,7 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
-/* HEADINGS */
-
 .login-title {
-    font-family: var(--font-heading);
     font-size: var(--text-2xl);
     font-weight: var(--font-bold);
     margin-bottom: var(--space-2);
@@ -63,7 +54,9 @@ body {
     margin-bottom: var(--space-8);
 }
 
-/* FORM */
+/* =====================
+   FORM
+===================== */
 
 .form-group {
     display: flex;
@@ -93,7 +86,7 @@ body {
 
 .form-group input:focus {
     outline: none;
-    border-color: var(--color-btn);
+    border-color: var(--color-btn-muted);
     box-shadow: 0 0 0 3px rgba(242, 237, 232, 0.1);
 }
 
@@ -101,7 +94,9 @@ body {
     color: var(--color-text-muted);
 }
 
-/* BUTTON */
+/* =====================
+   BUTTON
+===================== */
 
 .login-btn {
     font-family: var(--font-body);
@@ -110,7 +105,7 @@ body {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-text);
-    background: var(--color-btn);
+    background: var(--color-btn-muted);
     border: none;
     border-radius: var(--radius-md);
     padding: var(--space-3) var(--space-4);
@@ -123,7 +118,7 @@ body {
 }
 
 .login-btn:hover {
-    background: rgb(232, 227, 222);
+    background: var(--color-btn-light-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(242, 237, 232, 0.15);
 }
@@ -138,7 +133,9 @@ body {
     transform: none;
 }
 
-/* ERROR */
+/* =====================
+   ERROR
+===================== */
 
 .login-error {
     font-size: var(--text-sm);
