@@ -55,6 +55,7 @@ function Navbar() {
     const handleSignOut = async () => {
         try {
             await signOut(auth)
+            localStorage.removeItem('isAdmin')
             navigate('/')
         } catch (err) {
             console.error(err)
@@ -64,7 +65,7 @@ function Navbar() {
         <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <nav className="container" aria-label="Main navigation">
 
-                <a href="http://localhost:5500/index.html" className="navbar-title">
+                <a href={`http://localhost:5500/index.html${isAdmin ? '?admin=true' : ''}`} className="navbar-title">
                     Tamyos Collective
                 </a>
 

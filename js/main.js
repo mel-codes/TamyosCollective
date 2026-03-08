@@ -5,9 +5,14 @@ const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
 // SCROLL - adds .scrolled class after 50px
-
 window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    const isProductsPage = document.body.classList.contains('products-page')
+
+    if (isProductsPage) {
+        navbar.classList.add('scrolled')  // always keep scrolled on products page
+    } else {
+        navbar.classList.toggle('scrolled', window.scrollY > 50)
+    }
 })
 
 // HAMBURGER TOGGLE

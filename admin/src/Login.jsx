@@ -20,6 +20,7 @@ function Login() {
 
         try {
             await signInWithEmailAndPassword(auth, email, password)
+            localStorage.setItem('isAdmin', 'true')
             console.log('logged in!')
             navigate('/dashboard')
         } catch (err) {

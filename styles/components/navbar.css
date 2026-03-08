@@ -202,3 +202,32 @@
         padding: var(--space-3) var(--space-4);
     }
 }
+
+.navbar-signout {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: opacity var(--transition-fast);
+}
+
+.navbar-signout::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-text);
+    transition: width var(--transition-normal);
+}
+
+.navbar-signout:hover::after {
+    width: 100%;
+}
