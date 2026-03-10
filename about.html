@@ -3,15 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>About</title>
 
+  <!-- ICON -->
+  <link rel="icon" type="image/png" href="assets/images/logo1.png">
+
+  <!-- SEO -->
+  <meta name="description" content="Tamyos Collective — curated vintage streetwear from Vancouver. Hand-picked pieces delivered to your door.">
+  <meta name="keywords" content="vintage clothing, thrift, 90s fashion, resale">
+  
+  <!-- Styles -->
   <link rel="stylesheet" href="styles/reset.css" />
   <link rel="stylesheet" href="styles/tokens.css" />
   <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/pages/about.css">
   <link rel="stylesheet" href="styles/components/navbar.css">
   <link rel="stylesheet" href="styles/components/button.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/e5e18f1d47.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+    <nav class="container" aria-label="Main navigation">
+      <a href="index.html" class="navbar-title">Tamyos Collective</a>
+      
+      <!-- hamburger - only visible on mobile -->
+      <button class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- nav links - hidden on mobile until hamburger is clicked -->
+      <ul class="navbar-links" id="nav-links">
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://www.depop.com/tamyosvintage/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGngRQ5J7t6STLu83sgBVXa2tQRFM_IwfLuphmHQiAvz2ZV9fgqBHl5YfQRXJ0_aem_0vLo8YJjkrq8V_r9in2cIw&utm_content=link_in_bio&utm_medium=social&utm_source=ig" target="_blank" rel="noopener">Depop ↗</a></li>
+        <!-- admin login icon -->
+        <li class="navbar-user-li">
+          <a href="http://localhost:5173" aria-label="Admin login">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+
+  <main>
+    <!-- landing page -->
+    <section class="landing-page">
+      <div>
+        <h1>ABOUT TAMYOS COLLECTIVE</h1>
+      </div>
+      <div>
+        <p>No fast fashion. No fakes. Just carefully sourced vintage and streetwear finds for those who know what they're looking for.</p>
+      </div>
+      <video src="assets/videos/vid1.mp4" type="video/mp4" class="about-video" autoplay muted loop playsinline>
+        Your browser does not support this video.
+      </video>
+    </section>
+
+    <!-- our story -->
+    <section class="our-story">
+      <div class="our-story-inner">
+        <div>
+          <h2>OUR STORY</h2>
+        </div>
+        <div>
+          <div>
+            <p>Founded in 2020, TAMYOS COLLECTIVE emerged from a passion for authentic urban fashion and a desire to create clothing that resonates with the modern generation.</p>
+          </div>
+          <div>
+            <p>What started as a small collection has grown into a movement that celebrates individuality, creativity, and the raw energy of street culture.</p>
+          </div>
+          <div>
+            <p>Every piece we create tells a story, blending contemporary design with timeless street aesthetics. We're not just selling clothes – we're building a community of like-minded individuals who express themselves through fashion.</p>
+          </div>
+        </div>
+        <div class="our-story-continued">
+          <div class="our-story-items">
+            <i class="fa-sharp fa-solid fa-circle-heart"></i>
+            <h3>PASSION</h3>
+            <p>We pour our heart into every design, ensuring each piece reflects our commitment to quality and authenticity.</p>
+          </div>
+          <div class="our-story-items">
+            <i class="fa-solid fa-users"></i>
+            <h3>COMMUNITY</h3>
+            <p>More than customers, you're part of our family. We build connections that go beyond transactions.</p>
+          </div>
+          <div class="our-story-items">
+            <i class="fa-solid fa-circle-bolt"></i>
+            <h3>INNOVATION</h3>
+            <p>We constantly push boundaries, experimenting with new styles while staying true to our roots.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- BACK TO TOP -->
+   
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+   
+  <footer>
+
+  </footer>
+
   <script type="module" src="js/auth.js"></script>
   <script src="js/main.js" defer></script>
 </body>

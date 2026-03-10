@@ -9,7 +9,7 @@
 /* HEADER */
 
 .products-header {
-    min-height: 40vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
