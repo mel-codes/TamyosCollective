@@ -12,15 +12,11 @@
   <meta name="description" content="">
   <meta name="keywords" content="vintage clothing, thrift, 90s fashion, resale">
 
-  <!-- Firebase -->
-  <script type="module" src="js/products.js"></script>
-
   <!-- CSS -->
   <link rel="stylesheet" href="styles/reset.css" />
   <link rel="stylesheet" href="styles/tokens.css" />
   <link rel="stylesheet" href="styles/global.css" />
   <link rel="stylesheet" href="styles/components/navbar.css">
-  <link rel="stylesheet" href="styles/components/button.css">
   <link rel="stylesheet" href="styles/pages/products.css">
 
   <!-- Fonts -->
@@ -36,17 +32,27 @@
   <!-- NAVBAR -->
 
   <header class="navbar">
-    <nav class="container" aria-label="Main navigation">
+    <nav aria-label="Main navigation">
       <a href="index.html" class="navbar-title">Tamyos Collective</a>
+      
+      <!-- hamburger - only visible on mobile -->
       <button class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
+
+      <!-- nav links - hidden on mobile until hamburger is clicked -->
       <ul class="navbar-links" id="nav-links">
-        <li><a href="products.html">Products</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="" target="_blank" rel="noopener">Depop ↗</a></li>
+        <li>
+          <a href="https://www.instagram.com/tamyoscollective/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li><a href="https://www.depop.com/tamyosvintage/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGngRQ5J7t6STLu83sgBVXa2tQRFM_IwfLuphmHQiAvz2ZV9fgqBHl5YfQRXJ0_aem_0vLo8YJjkrq8V_r9in2cIw&utm_content=link_in_bio&utm_medium=social&utm_source=ig" target="_blank" rel="noopener">Depop ↗</a></li>
+        <!-- admin login icon -->
         <li class="navbar-user-li">
           <a href="http://localhost:5173" aria-label="Admin login">
             <i class="fa-regular fa-user"></i>
@@ -55,6 +61,8 @@
       </ul>
     </nav>
   </header>
+
+  <!-- MAIN CONTENT -->
 
   <main class="page-top">
     <section class="landing-page">

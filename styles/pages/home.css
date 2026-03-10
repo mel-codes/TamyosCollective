@@ -205,15 +205,15 @@
 }
 
 /* =====================
-    MOODBOARD
+   MOODBOARD
 ===================== */
 
 .moodboard {
-    min-height: 105vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     row-gap: var(--space-12);
-    padding: var(--space-8);
+    padding: var(--space-16) 0;
     justify-content: center;
     align-items: center;
     color: var(--color-text-light);
@@ -227,11 +227,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-inline: var(--space-8);
 }
 
 .moodboard-heading h2 {
     font-size: var(--text-sm);
-    color: var(--color-text-light);
+    color: var(--color-text-light)
 }
 
 .moodboard-heading h1 {
@@ -243,6 +244,42 @@
     color: var(--color-text-muted);
 }
 
-.moodboard-container img {
+/* scrollable track */
+.moodboard-track-wrapper {
+    width: 100%;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.moodboard-track-wrapper:active {
+    cursor: grabbing;
+}
+
+.moodboard-track {
+    display: flex;
+    gap: var(--space-4);
+    overflow-x: scroll;
+    scroll-behavior: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-inline: var(--space-8);
+    user-select: none;
+}
+
+.moodboard-track::-webkit-scrollbar {
+    display: none;
+}
+
+.moodboard-track img {
+    height: 320px;
+    width: auto;
     border-radius: var(--radius-lg);
+    object-fit: cover;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+.moodboard-track.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
 }

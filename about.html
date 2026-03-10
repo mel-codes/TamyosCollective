@@ -16,27 +16,25 @@
   <link rel="stylesheet" href="styles/reset.css" />
   <link rel="stylesheet" href="styles/tokens.css" />
   <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/components/navbar.css">
   <link rel="stylesheet" href="styles/pages/about.css">
   <link rel="stylesheet" href="styles/components/contact.css">
-  <link rel="stylesheet" href="styles/components/navbar.css">
-  <link rel="stylesheet" href="styles/components/button.css">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <script src="https://kit.fontawesome.com/e5e18f1d47.js" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body class="about-page">
 
   <!-- NAVBAR -->
 
   <header class="navbar">
-    <nav class="container" aria-label="Main navigation">
+    <nav aria-label="Main navigation">
       <a href="index.html" class="navbar-title">Tamyos Collective</a>
       
       <!-- hamburger - only visible on mobile -->
@@ -48,8 +46,13 @@
 
       <!-- nav links - hidden on mobile until hamburger is clicked -->
       <ul class="navbar-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="https://www.instagram.com/tamyoscollective/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
         <li><a href="https://www.depop.com/tamyosvintage/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGngRQ5J7t6STLu83sgBVXa2tQRFM_IwfLuphmHQiAvz2ZV9fgqBHl5YfQRXJ0_aem_0vLo8YJjkrq8V_r9in2cIw&utm_content=link_in_bio&utm_medium=social&utm_source=ig" target="_blank" rel="noopener">Depop ↗</a></li>
         <!-- admin login icon -->
         <li class="navbar-user-li">
@@ -190,6 +193,7 @@
 
   <!-- SCRIPTS -->
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/contact.js" defer></script>
   <script type="module" src="js/auth.js"></script>
   <script src="js/main.js" defer></script>

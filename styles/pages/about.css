@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
     padding: var(--space-8);
+    padding-top: calc(var(--space-8) + 80px);
 
     min-height: 110vh;
     position: relative;
@@ -18,14 +19,12 @@
 }
 
 .landing-page h1 {
-    font-family: var(--font-heading);
     color: var(--color-text-light);
     font-size: var(--text-3xl);
-    text-wrap-mode: nowrap;
+    white-space: nowrap;
 }
 
 .landing-page p {
-    font-family: var(--font-body);
     color: var(--color-text-muted);
     text-align: center;
     max-width: 768px;
@@ -40,46 +39,9 @@
     margin-inline: auto;
 }
 
-@media (min-width: 768px) {
-    .landing-page {
-          
-    }
-}
-
 @media (min-width: 1024px) {
     .landing-page h1 {
         font-size: var(--text-4xl);
-    }
-}
-
-@media (min-width: 1280px) {
-    .landing-page {
-
-    }
-}
-
-.scroll-down {
-    position: absolute;
-    bottom: var(--space-8);
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--color-text-light);
-    font-size: var(--text-sm);
-    letter-spacing: 0.1rem;
-    white-space: nowrap;
-    animation: dropIn 1s ease forwards;
-    animation-delay: 0.5s;
-    opacity: 0;
-}
-
-@keyframes dropIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
     }
 }
 
@@ -109,14 +71,12 @@
 }
 
 .our-story h2 {
-    font-family: var(--font-heading);
     color: var(--color-text-light);
     font-size: var(--text-3xl);
-    text-wrap-mode: nowrap;
+    white-space: nowrap;
 }
 
 .our-story p {
-    font-family: var(--font-body);
     color: var(--color-text-muted);
     max-width: 768px;
 }
@@ -147,10 +107,9 @@
 }
 
 .our-story-items h3 {
-    font-family: var(--font-heading);
     color: var(--color-text-light);
     font-size: var(--text-2xl);
-    text-wrap-mode: nowrap;
+    white-space: nowrap;
 }
 
 @media (min-width: 1024px) {
@@ -191,13 +150,11 @@
 }
 
 .join-the-movement h2 {
-    font-family: var(--font-heading);
     color: var(--color-text-light);
     font-size: var(--text-3xl);
-    text-wrap-mode: nowrap;
+    white-space: nowrap;
 }
 
 .join-the-movement p {
-    font-family: var(--font-body);
     color: var(--color-text-light);
 }

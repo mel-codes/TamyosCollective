@@ -11,30 +11,34 @@ if (adminParam === 'true') {
     window.history.replaceState({}, '', window.location.pathname)
 }
 
-const isAdmin = sessionStorage.getItem('isAdmin') === 'true'
-const navLinks = document.getElementById('nav-links')
-const userIcon = document.querySelector('.navbar-user-li')
+const init = () => {
+    const isAdmin = sessionStorage.getItem('isAdmin') === 'true'
+    const navLinks = document.getElementById('nav-links')
+    const userIcon = document.querySelector('.navbar-user-li')
 
-if (!userIcon) return   // exit if navbar-user-li doesn't exist
+    if (!userIcon) return
 
-if (isAdmin) {
-    const dashboardLi = document.createElement('li')
-    dashboardLi.innerHTML = `<a href="http://localhost:5173/dashboard">Dashboard</a>`
-    navLinks.insertBefore(dashboardLi, userIcon)
+    if (isAdmin) {
+        const dashboardLi = document.createElement('li')
+        dashboardLi.innerHTML = `<a href="http://localhost:5173/dashboard">Dashboard</a>`
+        navLinks.insertBefore(dashboardLi, userIcon)
 
-    userIcon.innerHTML = `
-        <button class="navbar-signout" id="navbar-signout">Sign Out</button>
-    `
+        userIcon.innerHTML = `
+            <button class="navbar-signout" id="navbar-signout">Sign Out</button>
+        `
 
-    document.getElementById('navbar-signout').addEventListener('click', () => {
-        sessionStorage.removeItem('isAdmin')
-        window.location.reload()
-    })
+        document.getElementById('navbar-signout').addEventListener('click', () => {
+            sessionStorage.removeItem('isAdmin')
+            window.location.reload()
+        })
 
-} else {
-    userIcon.innerHTML = `
-        <a href="http://localhost:5173" aria-label="Admin login">
-            <i class="fa-regular fa-user"></i>
-        </a>
-    `
+    } else {
+        userIcon.innerHTML = `
+            <a href="http://localhost:5173" aria-label="Admin login">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        `
+    }
 }
+
+document.addEventListener('DOMContentLoaded', init)

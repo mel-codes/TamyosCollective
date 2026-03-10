@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons' 
 
 function Navbar() {
     const [isAdmin, setIsAdmin]   = useState(false)
@@ -86,8 +87,14 @@ function Navbar() {
 
                 {/* nav links */}
                 <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-                    <li><a href="http://localhost:5500/products.html" onClick={handleMenuClose}>Products</a></li>
-                    <li><a href="http://localhost:5500/about.html" onClick={handleMenuClose}>About</a></li>
+                    <li><a href={`http://localhost:5500/index.html${isAdmin ? '?admin=true' : ''}`} onClick={handleMenuClose}>Home</a></li>
+                    <li><a href={`http://localhost:5500/products.html${isAdmin ? '?admin=true' : ''}`} onClick={handleMenuClose}>Products</a></li>
+                    <li><a href={`http://localhost:5500/about.html${isAdmin ? '?admin=true' : ''}`} onClick={handleMenuClose}>About</a></li>
+                    <li>
+                        <a href="https://instagram.com/tamyoscollective" target="_blank" rel="noopener" aria-label="Instagram" onClick={handleMenuClose}>
+                            <FontAwesomeIcon icon={faInstagram} />
+                        </a>
+                    </li>
                     <li>
                         <a href="https://depop.com/tamyos" target="_blank" rel="noopener" onClick={handleMenuClose}>
                             Depop ↗
