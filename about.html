@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="styles/tokens.css" />
   <link rel="stylesheet" href="styles/global.css" />
   <link rel="stylesheet" href="styles/pages/about.css">
+  <link rel="stylesheet" href="styles/components/contact.css">
   <link rel="stylesheet" href="styles/components/navbar.css">
   <link rel="stylesheet" href="styles/components/button.css">
 
@@ -84,13 +85,14 @@
         </div>
         <div>
           <div>
-            <p>Founded in 2020, TAMYOS COLLECTIVE emerged from a passion for authentic urban fashion and a desire to create clothing that resonates with the modern generation.</p>
+            <p>Founded in 2023 by Justin Tamayo, TAMYOS COLLECTIVE was created for the community. The idea was simple: help people find pieces that fit their vibe 
+              whether that's a cozy hoodie for a study day at a cafe or a standout leather jacket for a night out.
+            </p>
           </div>
           <div>
-            <p>What started as a small collection has grown into a movement that celebrates individuality, creativity, and the raw energy of street culture.</p>
-          </div>
-          <div>
-            <p>Every piece we create tells a story, blending contemporary design with timeless street aesthetics. We're not just selling clothes – we're building a community of like-minded individuals who express themselves through fashion.</p>
+            <p>Since then, the Collective has grown to over 700 sales and has hosted multiple pop-up events across Vancouver. At its core, TAMYOS COLLECTIVE 
+              is all about bringing people together through style. Keeping you fly, on the go.
+            </p>
           </div>
         </div>
         <div class="our-story-continued">
@@ -112,6 +114,53 @@
         </div>
       </div>
     </section>
+
+    <!-- join the movement -->
+     <section class="join-the-movement">
+      <div class="join-the-movement-inner">
+        <div>
+          <h2>JOIN THE MOVEMENT</h2>
+        </div>
+        <div>
+          <p>Be part of something bigger. Follow us on social media and stay updated with our latest drops, behind-the-scenes content, and community events</p>
+        </div>
+      </div>
+     </section>
+
+     <!-- contact form -->
+    <section class="contact">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <div class="contact-heading">
+            <h1>GET IN TOUCH</h1>
+            <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+          </div>
+          <div class="contact-info">
+            <p><i class="fa-regular fa-circle-envelope"></i> contact@tamyoscollective.com</p>
+            <p><i class="fa-regular fa-phone"></i> +1 (555) 123-4567</p>
+            <p><i class="fa-regular fa-location-dot"></i> Vancouver, BC</p>
+          </div>
+        </div>
+        <div>
+          <form class="contact--form" id="contact-form">
+            <div class="form-group">
+              <input type="text" id="contact-name" name="name" placeholder="Your Name" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="contact-email" name="email" placeholder="Your Email" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" id="contact-message" placeholder="What's on your mind?" rows="5" required></textarea>
+            </div>
+            <input type="text" name="honeypot" id="honeypot" style="display:none" autocomplete="off" />
+            <button type="submit" class="btn btn--primary" id="form-submit">
+              Submit
+            </button>
+            <p class="form--feedback" id="form--feedback" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- BACK TO TOP -->
@@ -121,11 +170,27 @@
   </button>
 
   <!-- FOOTER -->
-   
-  <footer>
 
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/img1.png" alt="Tamyos Collective" class="footer-logo" />
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/tamyoscollective" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://depop.com/tamyos" target="_blank" rel="noopener" aria-label="Depop">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Tamyos Collective. All rights reserved.</p>
   </footer>
 
+  <!-- SCRIPTS -->
+
+  <script src="js/contact.js" defer></script>
   <script type="module" src="js/auth.js"></script>
   <script src="js/main.js" defer></script>
 </body>

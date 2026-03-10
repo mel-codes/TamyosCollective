@@ -32,7 +32,9 @@
   <script src="https://kit.fontawesome.com/e5e18f1d47.js" crossorigin="anonymous"></script>
 </head>
 <body class="products-page">
+
   <!-- NAVBAR -->
+
   <header class="navbar">
     <nav class="container" aria-label="Main navigation">
       <a href="index.html" class="navbar-title">Tamyos Collective</a>
@@ -55,13 +57,19 @@
   </header>
 
   <main class="page-top">
+    <section class="landing-page">
+      <div>
+        <h1>PRODUCTS</h1>
+      </div>
+      <div>
+        <p>Hand-picked vintage pieces, one of a kind.</p>
+      </div>
+      <video src="assets/videos/vid2.mp4" type="video/mp4" class="products-video" autoplay muted loop playsinline>
+        Your browser does not support this video.
+      </video>
+    </section>
     <section class="products-section">
       <div class="container">
-        <div class="products-header">
-          <h1>Products</h1>
-          <p>Hand-picked vintage pieces, one of a kind.</p>
-        </div>
-
         <!-- products grid — JS fills this in -->
         <ul class="products-grid" id="products-grid">
           <!-- loading state -->
@@ -70,6 +78,31 @@
       </div>
     </section>
   </main>
+
+  <!-- BACK TO TOP -->
+   
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/img1.png" alt="Tamyos Collective" class="footer-logo" />
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/tamyoscollective" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://depop.com/tamyos" target="_blank" rel="noopener" aria-label="Depop">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Tamyos Collective. All rights reserved.</p>
+  </footer>
 
   <script type="module" src="js/auth.js"></script>
   <script type="module" src="js/products.js"></script>
