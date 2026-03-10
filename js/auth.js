@@ -20,7 +20,7 @@ const init = () => {
 
     if (isAdmin) {
         const dashboardLi = document.createElement('li')
-        dashboardLi.innerHTML = `<a href="http://localhost:5173/dashboard">Dashboard</a>`
+        dashboardLi.innerHTML = `<a href="https://tamyos-collective.vercel.app/dashboard">Dashboard</a>`
         navLinks.insertBefore(dashboardLi, userIcon)
 
         userIcon.innerHTML = `
@@ -34,7 +34,7 @@ const init = () => {
 
     } else {
         userIcon.innerHTML = `
-            <a href="http://localhost:5173" aria-label="Admin login">
+            <a href="https://tamyos-collective.vercel.app" aria-label="Admin login">
                 <i class="fa-regular fa-user"></i>
             </a>
         `
