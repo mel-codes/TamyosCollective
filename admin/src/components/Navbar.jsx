@@ -69,10 +69,10 @@ function Navbar() {
             <nav className="container" aria-label="Main navigation">
 
                 
-                    <a href={`https://symphonious-travesseiro-348fc0.netlify.app/index.html${isAdmin ? '?admin=true' : ''}`}
+                   <a href={`https://tamyoscollective.com/index.html${isAdmin ? '?admin=true' : ''}`}
                     className="navbar-title">
                     Tamyos Collective
-                    </a>
+                </a>
 
                 {/* hamburger */}
                 <button
@@ -88,9 +88,9 @@ function Navbar() {
 
                 {/* nav links */}
                 <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-                    <li><a href={`https://symphonious-travesseiro-348fc0.netlify.app/index.html${isAdmin ? '?admin=true' : ''}`} onClick={handleMenuClose}>Home</a></li>
-                    <li><a href={`https://symphonious-travesseiro-348fc0.netlify.app/products.html${isAdmin ? '?admin=true' : ''}`} onClick={handleMenuClose}>Products</a></li>
-                    <li><a href={`https://symphonious-travesseiro-348fc0.netlify.app/about.html${isAdmin ? '?admin=true' : ''}`} onClick={handleMenuClose}>About</a></li>
+                    <li><a href={`https://tamyoscollective.com/index.html${isAdmin ? '?admin=true' : ''}`} onClick={handleMenuClose}>Home</a></li>
+                    <li><a href={`https://tamyoscollective.com/products.html${isAdmin ? '?admin=true' : ''}`} onClick={handleMenuClose}>Products</a></li>
+                    <li><a href={`https://tamyoscollective.com/about.html${isAdmin ? '?admin=true' : ''}`} onClick={handleMenuClose}>About</a></li>
                     <li>
                         <a href="https://instagram.com/tamyoscollective" target="_blank" rel="noopener" aria-label="Instagram" onClick={handleMenuClose}>
                             <FontAwesomeIcon icon={faInstagram} />
