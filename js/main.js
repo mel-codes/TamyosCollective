@@ -27,6 +27,16 @@ window.addEventListener('scroll', () => {
     }
 })
 
+// ====================
+// BACK TO TOP
+// ====================
+
+if (backToTop) {
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    })
+}
+
 // =====================
 // HAMBURGER TOGGLE
 // =====================
