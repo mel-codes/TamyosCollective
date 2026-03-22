@@ -212,7 +212,7 @@
     min-height: 60vh;
     display: flex;
     flex-direction: column;
-    row-gap: var(--space-12);
+    row-gap: var(--space-24);
     padding: var(--space-16) 0;
     justify-content: center;
     align-items: center;
@@ -277,6 +277,12 @@
     object-fit: cover;
     flex-shrink: 0;
     pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+    .moodboard-track img {
+        height: 450px;
+    }
 }
 
 .moodboard-track.dragging {
