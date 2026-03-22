@@ -93,7 +93,7 @@
 ===================== */
 
 .delivery-process {
-    min-height: 105vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     row-gap: var(--space-12);
@@ -148,7 +148,7 @@
 ===================== */
 
 .refund-policy {
-    min-height: 105vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     row-gap: var(--space-12);
