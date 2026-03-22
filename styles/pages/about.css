@@ -21,7 +21,6 @@
 .landing-page h1 {
     color: var(--color-text-light);
     font-size: var(--text-3xl);
-    white-space: nowrap;
 }
 
 .landing-page p {
