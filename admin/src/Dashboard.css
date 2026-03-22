@@ -183,3 +183,154 @@
     border-radius: var(--radius-md);
     border: 1px solid rgba(192, 57, 43, 0.2);
 }
+
+/* =====================
+   PRODUCT LIST
+===================== */
+
+.product-list {
+    margin-top: var(--space-12);
+}
+
+.product-list__heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-6);
+}
+
+.product-list__item {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    padding: var(--space-4);
+    background: var(--color-bg-2);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+}
+
+.product-list__img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.product-list__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.product-list__name {
+    font-weight: var(--font-semibold);
+    font-size: var(--text-base);
+}
+
+.product-list__meta {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.product-list__actions {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.product-list__edit {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.product-list__edit input,
+.product-list__edit textarea {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    background: var(--color-bg);
+    border: var(--border-thin);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+    width: 100%;
+}
+
+.btn-edit {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    background: var(--color-btn-light);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.btn-edit:hover {
+    background: var(--color-btn-light-hover);
+}
+
+.btn-delete {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--color-error);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+}
+
+.btn-delete:hover {
+    opacity: 0.85;
+}
+
+.btn-save {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--color-success);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+}
+
+.btn-save:hover {
+    opacity: 0.85;
+}
+
+.btn-cancel {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    background: none;
+    border: 1px solid var(--color-text-muted);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+}
+
+.btn-cancel:hover {
+    opacity: 0.7;
+}

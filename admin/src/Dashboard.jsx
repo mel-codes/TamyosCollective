@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { db, storage } from './firebase'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, getDocs, orderBy, query, deleteDoc, doc, updateDoc } from 'firebase/firestore'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase'
@@ -20,15 +20,32 @@ function Dashboard() {
     const [loading, setLoading]     = useState(false)
     const [success, setSuccess]     = useState('')
     const [error, setError]         = useState('')
+    const [products, setProducts]   = useState([])
+    const [editingId, setEditingId] = useState(null)
+    const [editData, setEditData]   = useState({})
     const navigate = useNavigate()
 
-    // redirect to login if not authenticated
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (!user) navigate('/')
         })
         return () => unsubscribe()
     }, [])
+
+    useEffect(() => {
+        fetchProducts()
+    }, [])
+
+    const fetchProducts = async () => {
+        try {
+            const q = query(collection(db, 'products'), orderBy('createdAt', 'desc'))
+            const snapshot = await getDocs(q)
+            const items = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+            setProducts(items)
+        } catch (err) {
+            console.error(err)
+        }
+    }
 
     const handleImageChange = (e) => {
         const file = e.target.files[0]
@@ -51,13 +68,11 @@ function Dashboard() {
         setLoading(true)
 
         try {
-            // 1. upload image to Firebase Storage
             const imageRef = ref(storage, `products/${Date.now()}-${image.name}`)
             await uploadBytes(imageRef, image)
             const imageUrl = await getDownloadURL(imageRef)
 
-            // 2. save product data to Firestore
-            await addDoc(collection(db, 'products'), {
+            const docRef = await addDoc(collection(db, 'products'), {
                 name,
                 size,
                 price,
@@ -68,8 +83,10 @@ function Dashboard() {
             })
 
             setSuccess('Product added successfully!')
+            setProducts(prev => [{
+                id: docRef.id, name, size, price, description, depopLink, imageUrl
+            }, ...prev])
 
-            // reset form
             setName('')
             setSize('')
             setPrice('')
@@ -86,6 +103,27 @@ function Dashboard() {
         }
     }
 
+    const handleDelete = async (id) => {
+        if (!window.confirm('Are you sure you want to delete this product?')) return
+        try {
+            await deleteDoc(doc(db, 'products', id))
+            setProducts(prev => prev.filter(p => p.id !== id))
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    const handleEditSave = async (id) => {
+        try {
+            await updateDoc(doc(db, 'products', id), editData)
+            setProducts(prev => prev.map(p => p.id === id ? { ...p, ...editData } : p))
+            setEditingId(null)
+            setEditData({})
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
     return (
         <div className="dashboard">
             <main className="dashboard-main">
@@ -97,7 +135,6 @@ function Dashboard() {
 
                 <form className="dashboard-form" onSubmit={handleSubmit}>
 
-                    {/* IMAGE UPLOAD */}
                     <div className="form-group">
                         <label htmlFor="product-image">Product Image</label>
                         <div className="image-upload">
@@ -119,7 +156,6 @@ function Dashboard() {
                         </div>
                     </div>
 
-                    {/* PRODUCT NAME */}
                     <div className="form-group">
                         <label htmlFor="product-name">Product Name</label>
                         <input
@@ -132,7 +168,6 @@ function Dashboard() {
                         />
                     </div>
 
-                    {/* SIZE */}
                     <div className="form-group">
                         <label htmlFor="product-size">Size</label>
                         <input
@@ -145,7 +180,6 @@ function Dashboard() {
                         />
                     </div>
 
-                    {/* PRICE */}
                     <div className="form-group">
                         <label htmlFor="product-price">Price</label>
                         <input
@@ -158,7 +192,6 @@ function Dashboard() {
                         />
                     </div>
 
-                    {/* DESCRIPTION */}
                     <div className="form-group">
                         <label htmlFor="product-desc">Description</label>
                         <textarea
@@ -171,7 +204,6 @@ function Dashboard() {
                         ></textarea>
                     </div>
 
-                    {/* DEPOP LINK */}
                     <div className="form-group">
                         <label htmlFor="depop-link">Depop Link</label>
                         <input
@@ -192,6 +224,41 @@ function Dashboard() {
                     </button>
 
                 </form>
+
+                {/* PRODUCT LIST */}
+                {products.length > 0 && (
+                    <div className="product-list">
+                        <h2 className="product-list__heading">Products ({products.length})</h2>
+                        {products.map(p => (
+                            <div className="product-list__item" key={p.id}>
+                                <img src={p.imageUrl} alt={p.name} className="product-list__img" />
+                                {editingId === p.id ? (
+                                    <div className="product-list__edit">
+                                        <input value={editData.name} onChange={e => setEditData({...editData, name: e.target.value})} placeholder="Name" />
+                                        <input value={editData.size} onChange={e => setEditData({...editData, size: e.target.value})} placeholder="Size" />
+                                        <input value={editData.price} onChange={e => setEditData({...editData, price: e.target.value})} placeholder="Price" />
+                                        <textarea value={editData.description} onChange={e => setEditData({...editData, description: e.target.value})} placeholder="Description" rows="2" />
+                                        <input value={editData.depopLink} onChange={e => setEditData({...editData, depopLink: e.target.value})} placeholder="Depop Link" />
+                                        <div className="product-list__actions">
+                                            <button className="btn-save" onClick={() => handleEditSave(p.id)}>Save</button>
+                                            <button className="btn-cancel" onClick={() => { setEditingId(null); setEditData({}) }}>Cancel</button>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="product-list__info">
+                                        <p className="product-list__name">{p.name}</p>
+                                        <p className="product-list__meta">{p.size} · {p.price}</p>
+                                        <div className="product-list__actions">
+                                            <button className="btn-edit" onClick={() => { setEditingId(p.id); setEditData({ name: p.name, size: p.size, price: p.price, description: p.description, depopLink: p.depopLink }) }}>Edit</button>
+                                            <button className="btn-delete" onClick={() => handleDelete(p.id)}>Delete</button>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                )}
+
             </main>
         </div>
     )
